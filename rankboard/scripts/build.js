@@ -120,6 +120,15 @@ for (const p of PRODUCTS) {
 
 out.dates = [...allDates].sort();
 out.built = out.dates[out.dates.length - 1];
+// Optional agency logo (e.g. EZ-COMMERCE). Embedded as a data URI so the page stays
+// self-contained; the path resolves against the config file, so CI finds it too.
+if (CFG.agencyLogo) {
+  const lf = abs(CFG.agencyLogo);
+  const ext = path.extname(lf).slice(1).toLowerCase();
+  const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : 'image/' + ext;
+  out.agencyLogo = 'data:' + mime + ';base64,' + fs.readFileSync(lf).toString('base64');
+  out.agencyName = CFG.agencyName || 'Agency';
+}
 fs.writeFileSync(CFG.out + '/payload.json', JSON.stringify(out));
 
 // --- console summary so the numbers are visible before the page is built ------

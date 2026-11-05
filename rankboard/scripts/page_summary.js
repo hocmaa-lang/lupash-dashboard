@@ -75,12 +75,17 @@ details summary{cursor:pointer;color:var(--ink2);font-size:13px;margin-top:14px;
   border:1px solid var(--line);border-radius:7px;padding:8px 11px;font-size:12.5px;
   box-shadow:0 6px 20px rgba(0,0,0,.16);z-index:9}
 .tt b{display:block;margin-bottom:3px}
+.agency{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin:0 0 18px;
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.agency img{height:24px;width:auto;display:block}
+@media(max-width:600px){.agency img{height:18px}}
 .greet{font-size:13px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink3);font-weight:600;margin-bottom:6px}
 .greet b{color:var(--ink);font-weight:600}
 footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:28px}
 </style></head><body><div class="wrap">
 
+${P.agencyLogo ? `<div class="agency"><span>Prepared by</span><img src="${P.agencyLogo}" alt="${P.agencyName}"></div>` : ''}
 <div class="greet" id="greet"></div>
 <h1>${P.brandTitle} — organic rank</h1>
 <div class="sub">${P.marketplace} · ${P.dates.length}-day window ${P.dates[0]} → ${P.built} · source: Data Dive Rank Radar</div>

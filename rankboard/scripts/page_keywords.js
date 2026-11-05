@@ -99,6 +99,10 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
 .note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--ink3);
   border-radius:8px;padding:11px 15px;margin:16px 0 0;font-size:13px;color:var(--ink2)}
 .note b{color:var(--ink)}
+.agency{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin:0 0 18px;
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.agency img{height:24px;width:auto;display:block}
+@media(max-width:600px){.agency img{height:18px}}
 .greet{font-size:13px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink3);font-weight:600;margin-bottom:6px}
 .greet b{color:var(--ink);font-weight:600}
@@ -110,6 +114,7 @@ td.n{text-align:right;font-variant-numeric:tabular-nums}
 .dows span.m{color:var(--markink);font-weight:800}
 </style></head><body><div class="wrap">
 <div class="note" id="diag" translate="no" style="display:none;margin:0 0 14px;border-left-color:var(--bad)"></div>
+${P.agencyLogo ? `<div class="agency"><span>Prepared by</span><img src="${P.agencyLogo}" alt="${P.agencyName}"></div>` : ''}
 <div class="greet" id="greet"></div>
 <h1>${P.brandTitle} — keyword rank, day by day</h1>
 <div class="sub">${P.marketplace} · ${P.dates[0]} → ${P.built} · Data Dive Rank Radar · one cell = one day

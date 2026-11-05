@@ -129,7 +129,8 @@ if (WANT_SEAL) {
     // Without a siteDir the sealed copy would overwrite the plain page it was made
     // from — prefix it instead, so the readable original survives for the next edit.
     const dest = seal.siteDir ? abs(seal.siteDir) + '/' + out : OUT + '/sealed_' + out;
-    process.stdout.write(run('seal.js', OUT + '/' + file, dest, title, user, pass, CFG.brandTitle || CFG.brand));
+    process.stdout.write(run('seal.js', OUT + '/' + file, dest, title, user, pass, CFG.brandTitle || CFG.brand,
+      CFG.agencyLogo ? abs(CFG.agencyLogo) : ''));
   }
   console.log('\n  CREDENTIALS — send the link and the password on separate channels');
   console.log('  username: ' + user);

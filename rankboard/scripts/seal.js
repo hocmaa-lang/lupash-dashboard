@@ -4,7 +4,14 @@
 const fs = require('fs');
 const crypto = require('crypto');
 
-const [, , src, out, title, user, pass, brand] = process.argv;
+const [, , src, out, title, user, pass, brand, logoFile] = process.argv;
+// Optional agency logo on the gate (9th arg, a file path). Embedded, never fetched.
+let LOGO = '';
+if (logoFile && fs.existsSync(logoFile)) {
+  const ext = logoFile.split('.').pop().toLowerCase();
+  const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : 'image/' + ext;
+  LOGO = '<img class="agency" src="data:' + mime + ';base64,' + fs.readFileSync(logoFile).toString('base64') + '" alt="">';
+}
 const ITER = 310000;                       // OWASP 2023 guidance for PBKDF2-SHA256
 
 const plain = Buffer.from(fs.readFileSync(src, 'utf8'), 'utf8');
@@ -31,6 +38,7 @@ const page = `<!doctype html>
 body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);color:var(--ink);
  font-family:var(--sans);padding:24px}
 .gate{width:100%;max-width:380px}
+.agency{display:block;height:26px;width:auto;margin:0 0 28px}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
 h1{font-size:26px;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;font-weight:750}
 p.sub{color:var(--muted);font-size:14px;margin:0 0 26px;line-height:1.5}
@@ -45,6 +53,7 @@ button:disabled{opacity:.55;cursor:progress}
 .err{color:var(--crit);font-size:13.5px;min-height:20px;margin-top:12px;font-family:var(--mono)}
 </style></head><body>
 <div class="gate" id="gate">
+  ${LOGO}
   <p class="eyebrow">${(brand||"Client").toUpperCase()} &middot; confidential</p>
   <h1>${title}</h1>
   <p class="sub">This document contains confidential client data. Enter the credentials you were sent.</p>
