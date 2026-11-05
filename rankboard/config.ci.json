@@ -1,0 +1,126 @@
+{
+  "brand": "lupash",
+  "brandTitle": "LUPASH GAMES",
+  "teamName": "Lupash",
+  "marketplace": "Amazon US",
+  "days": 30,
+  "spillDir": "../.rankboard/spill",
+  "out": "../.rankboard/build",
+  "markDays": [
+    5,
+    6,
+    0
+  ],
+  "markLabel": "Fri · Sat · Sun",
+  "showAllKeywords": true,
+  "theme": "light",
+  "products": [
+    {
+      "key": "cbtiger",
+      "radarId": "46bce962-dff2-4f81-9610-c93cad904e25",
+      "asin": "B09BL6Q2H9",
+      "name": "CBTiger — therapy game for kids",
+      "short": "CBTiger",
+      "file": "cbtiger.json"
+    },
+    {
+      "key": "cbtrip",
+      "radarId": "64963042-10c6-4d86-a28a-81ddcbb890cf",
+      "asin": "B0CQ9SSFBV",
+      "name": "CBTrip — counseling game, thoughts & feelings",
+      "short": "CBTrip",
+      "file": "cbtrip.json"
+    },
+    {
+      "key": "cbtrees",
+      "radarId": "8bd1ee43-bb19-4791-96b8-851c84b31d5a",
+      "asin": "B0CQ9MS11D",
+      "name": "CBTrees — therapy counseling game",
+      "short": "CBTrees",
+      "file": "cbtrees.json"
+    },
+    {
+      "key": "cbtime",
+      "radarId": "c8645bdc-8914-4c7f-85a4-db257594c84a",
+      "asin": "B0CJLJJZFK",
+      "name": "CBTime — CBT board game for coping skills",
+      "short": "CBTime",
+      "file": "cbtime.json"
+    },
+    {
+      "key": "cbtrail",
+      "radarId": "63f56db9-a2ac-4c38-80aa-11f979f9ffe1",
+      "asin": "B0B6D3NM82",
+      "name": "CBTrail — CBT emotional game",
+      "short": "CBTrail",
+      "file": "cbtrail.json"
+    },
+    {
+      "key": "flipbook",
+      "radarId": "94bf5681-4ef8-4adc-8f53-d6a183a5a4ea",
+      "asin": "B08CRT3JVN",
+      "name": "Feelings Flipbook for kids",
+      "short": "Feelings Flipbook",
+      "file": "flipbook.json"
+    },
+    {
+      "key": "magnet",
+      "radarId": "e47296b3-9a84-4b91-ac09-2c4f82d5c069",
+      "asin": "B09CGW75KW",
+      "name": "Magnet Feelings Chart for kids",
+      "short": "Feelings Chart",
+      "file": "magnet.json"
+    },
+    {
+      "key": "emotion",
+      "radarId": "228e7615-d812-4982-b943-97d6b24f25ca",
+      "asin": "B09NZS58SR",
+      "name": "Emotion Cards — feelings flashcards",
+      "short": "Emotion Cards",
+      "file": "emotion.json"
+    },
+    {
+      "key": "mindland",
+      "radarId": "322c6722-4a57-4800-a121-745059f1961f",
+      "asin": "B08YFKS824",
+      "name": "Mindful Land — mindfulness cards",
+      "short": "Mindful Land",
+      "file": "mindland.json"
+    },
+    {
+      "key": "mindworld",
+      "radarId": "89f7fc30-4edd-4bb6-acf0-93c7ef31f23c",
+      "asin": "B0B6CXQBJZ",
+      "name": "Mindfulworld — mindfulness cards game",
+      "short": "Mindfulworld",
+      "file": "mindworld.json"
+    }
+  ],
+  "seal": {
+    "user": "lupash",
+    "siteDir": "..",
+    "publicUrl": "https://hocmaa-lang.github.io/lupash-dashboard/",
+    "gitEmail": "github-actions[bot]@users.noreply.github.com",
+    "gitName": "github-actions[bot]",
+    "publish": [
+      {
+        "src": "keywords.html",
+        "as": "index.html",
+        "passEnv": "RANKBOARD_LUPASH_PASS",
+        "title": "LUPASH GAMES — keyword rank by day"
+      },
+      {
+        "src": "keywords.html",
+        "as": "keywords.html",
+        "passEnv": "RANKBOARD_LUPASH_PASS",
+        "title": "LUPASH GAMES — keyword rank by day"
+      },
+      {
+        "src": "dashboard.html",
+        "as": "dashboard.html",
+        "passEnv": "RANKBOARD_LUPASH_PASS",
+        "title": "LUPASH GAMES — organic rank summary"
+      }
+    ]
+  }
+}
